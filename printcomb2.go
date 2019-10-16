@@ -31,7 +31,7 @@ func PrintComb2() {
 							z01.PrintRune(l)
 							z01.PrintRune(',')
 							z01.PrintRune(' ')
-						} 
+						}
 					}
 				}
 			}
