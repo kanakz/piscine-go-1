@@ -2,20 +2,20 @@ package piscine
 
 import "github.com/01-edu/z01"
 
-func NbrSet(x int) {
+func SetNbr(n int) {
 	a := '0'
-	if x == 0 {
+	if n == 0 {
 		z01.PrintRune(a)
 		return
 	}
-	for i := -1; i >= x%10; i-- {
+	for i := 1; i <= n%10; i++ {
 		a++
 	}
-	for i := 1; i <= x%10; i++ {
+	for i := -1; i >= n%10; i-- {
 		a++
 	}
-	if x/10 != 0 {
-		NbrSet(x/10)
+	if n/10 != 0 {
+		SetNbr(n/10)
 	}
 	z01.PrintRune(a)
 	return
@@ -25,5 +25,5 @@ func PrintNbr(n int) {
 	if n < 0 {
 		z01.PrintRune('-')
 	}
-	NbrSet(n)
+	SetNbr(n)
 }
