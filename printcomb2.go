@@ -38,9 +38,9 @@ func PrintComb2() {
 				}
 			}
 		}
-    }
+	}
 }
 
-func main(){
+func main() {
 	PrintComb2()
 }
