@@ -15,13 +15,13 @@ func SetNbr(n int) {
 		z01.PrintRune(a)
 		return
 	}
-	for i := 1; i <= n % 10; i++ {
+	for i := 1; i <= n%10; i++ {
 		a++
 	}
-	for i := -1; i >= n % 10; i-- {
+	for i := -1; i >= n%10; i-- {
 		a++
 	}
-	if n / 10 != 0 {
+	if n/10 != 0 {
 		SetNbr(n / 10)
 	}
 	z01.PrintRune(a)
