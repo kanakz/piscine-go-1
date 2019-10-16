@@ -8,15 +8,11 @@ func NbrSet(x int) {
 		z01.PrintRune(a)
 		return
 	}
-	if x < 0 {
-		for i := -1; i >= x%10; i-- {
-			a++
-		}
+	for i := -1; i >= x%10; i-- {
+		a++
 	}
-	if x > 0 {
-		for i := 1; i <= x%10; i++ {
-			a++
-		}
+	for i := 1; i <= x%10; i++ {
+		a++
 	}
 	if x/10 != 0 {
 		NbrSet(x/10)
