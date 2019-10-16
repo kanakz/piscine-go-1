@@ -18,13 +18,13 @@ func NbrSet(x int) {
 			a++
 		}
 	}
-	
 	if x/10 != 0 {
 		NbrSet(x/10)
 	}
 	z01.PrintRune(a)
 	return
 }
+
 func PrintNbr(n int) {
 	if n < 0 {
 		z01.PrintRune('-')
