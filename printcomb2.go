@@ -30,13 +30,13 @@ func PrintComb2() {
 							z01.PrintRune(' ')
 							z01.PrintRune(k)
 							z01.PrintRune(l)
-							z01.PrintRune(',')main
-							z01.PrintRune(' ')main
-						}main
-					}main
-			}main
-			}main
-		}main
+							z01.PrintRune(',')
+							z01.PrintRune(' ')
+						}
+					}
+				}
+			}
+		}
     }
 }
 
