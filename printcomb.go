@@ -22,9 +22,9 @@ func PrintComb() {
 			}
 		}
 	}
+	z01.PrintRune('\n')
 }
 
 func main() {
 	PrintComb()
-	z01.PrintRune('\n')
 }
