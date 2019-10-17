@@ -6,8 +6,8 @@ import (
 
 func PrintStr(str string) {
 	str1 := []rune(str)
-	for i := 0; i < len(str1); i++ {
-		z01.PrintRune(rune(str1[i]))
+	for _, word := range str1 {
+		z01.PrintRune(rune(word))
 	}
 	z01.PrintRune('\n')
 }
