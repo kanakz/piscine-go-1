@@ -10,5 +10,4 @@ func PrintStr(str string) {
 		z01.PrintRune(rune(word))
 		a++
 	}
-	z01.PrintRune('\n')
 }
