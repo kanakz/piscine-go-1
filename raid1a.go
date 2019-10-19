@@ -7,18 +7,18 @@ func Raid1a(x, y int) {
 		z01.PrintRune('\n')
 	}
 
-	for i := 1; i <= x; i++ {
-		if i == x || i == 1 {
-			for j := 1; j <= y; j++ {
-				if j == 1 || j == y {
+	for j := 1; j <= y; j++ {
+		if j == y || j == 1 {
+			for i := 1; i <= x; i++ {
+				if i == 1 || i == x {
 					z01.PrintRune('o')
 				} else {
 					z01.PrintRune('-')
 				}
 			}
 		} else {
-			for j := 1; j <= y; j++ {
-				if j == 1 || j == y {
+			for i := 1; i <= x; i++ {
+				if i == 1 || i == x {
 					z01.PrintRune('|')
 				} else {
 					z01.PrintRune(' ')
