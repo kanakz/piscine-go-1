@@ -17,7 +17,7 @@ func FindNextPrime(nb int) int {
 	if Prime(nb) {
 		return nb
 	} else {
-		for i := nb; i <= 1e11; i++ {
+		for i := nb; i <= 1e10; i++ {
 			nb = nb + 1
 			if Prime(nb) {
 				return nb
