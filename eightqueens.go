@@ -1,14 +1,22 @@
 package piscine
 
 import (
-	"fmt"
-
 	"github.com/01-edu/z01"
 )
 
 const n = 8
 
 var cells = [n]int{}
+
+var ans = '0'
+
+func RuneTransform(x int) rune {
+	r := '0'
+	for i := 0; i < x; i++ {
+		r++
+	}
+	return r
+}
 
 func PositionCheck(queen, pos int) bool {
 	for i := 0; i < queen; i++ { // проверяем всех queen и их позиции, затем продвигаемся
@@ -23,7 +31,8 @@ func PositionCheck(queen, pos int) bool {
 func SetQueens(k int) {
 	if k == n {
 		for i := 0; i < n; i++ { // генерируем возможности
-			fmt.Print(cells[i] + 1)
+			ans = RuneTransform(cells[i] + 1)
+			z01.PrintRune(ans)
 		}
 		z01.PrintRune('\n')
 	} else {
