@@ -1,15 +1,19 @@
 package piscine
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/01-edu/z01"
+)
 
 const n = 8
 
 var cells = [n]int{}
 
 func PositionCheck(queen, pos int) bool {
-	for i := 0; i < queen; i++ {
-		_pos := cells[i]
-		if _pos == pos || _pos == pos-(queen-i) || _pos == pos+(queen-i) {
+	for i := 0; i < queen; i++ { // проверяем всех queen и их позиции, затем продвигаемся
+		_pos := cells[i]                                                   // получить позицию другой queen
+		if _pos == pos || _pos == pos-(queen-i) || _pos == pos+(queen-i) { // rows, columns, diagonals
 			return false
 		}
 	}
@@ -18,15 +22,15 @@ func PositionCheck(queen, pos int) bool {
 
 func SetQueens(k int) {
 	if k == n {
-		for i := 0; i < n; i++ {
+		for i := 0; i < n; i++ { // генерируем возможности
 			fmt.Print(cells[i] + 1)
 		}
-		fmt.Println('\n')
+		z01.PrintRune('\n')
 	} else {
 		for i := 0; i < n; i++ {
-			if PositionCheck(k, i) {
+			if PositionCheck(k, i) { // проверяем перед тем, как поставить queen в положение k
 				cells[k] = i
-				SetQueens(k + 1)
+				SetQueens(k + 1) // поставить другую queen
 			}
 		}
 	}
