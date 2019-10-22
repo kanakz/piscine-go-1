@@ -16,21 +16,21 @@ func Index(s string, toFind string) int {
 	kF := 1
 	for index := range sF {
 		index = index
-		kS++
+		kF++
 	}
 	for index := range sS {
 		index = index
 		kF++
 	}
 	for index, letter := range sS {
-		if letter == sF[0] && kF >= kS+index-1 {
+		if letter == sF[0] && kS >= kF+index-1 {
 			m := 1
-			for i := 1; i < kS; i++ {
+			for i := 1; i < kF; i++ {
 				if sF[i] == sS[index+i] {
 					m++
 				}
 			}
-			if m == kS {
+			if m == kF {
 				return index
 			}
 		}
