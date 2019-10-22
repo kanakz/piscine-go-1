@@ -17,8 +17,14 @@ func IntToDigits(n int) (digits []int) {
 }
 
 func SortIntegerTable(table []int) []int {
-	for i := 0; i < len(table); i++ {
-		for j := 0; j < len(table); j++ {
+	ln := 0
+	for _, i := range table {
+		if i == i {
+			ln++
+		}
+	}
+	for i := 0; i < ln; i++ {
+		for j := 0; j < ln; j++ {
 			if table[j] > table[i] {
 				table[i] = table[i] + table[j]
 				table[j] = table[i] - table[j]
