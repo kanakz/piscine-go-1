@@ -1,27 +1,36 @@
 package piscine
 
-func Count(s []rune) int {
-	k := 0
-	for index := range s {
-		index = index
-		k++
-	}
-	return k
-}
+// func Count(s []rune) int {
+// 	k := 0
+// 	for index := range s {
+// 		index = index
+// 		k++
+// 	}
+// 	return k
+// }
 
 func Index(s string, toFind string) int {
-	s1 := []rune(s)
-	s2 := []rune(toFind)
-	match := 1
-
-	for index, letter := range s1 {
-		if letter == s2[0] && Count(s1) >= Count(s2)+index-1 {
-			for i := 1; i < Count(s2); i++ {
-				if s2[i] == s1[index+i] {
-					match++
+	sS := []rune(s)
+	sF := []rune(toFind)
+	kS := 0
+	kF := 0
+	for index := range sF {
+		index = index
+		kS++
+	}
+	for index := range sS {
+		index = index
+		kF++
+	}
+	for index, letter := range sS {
+		if letter == sF[0] && kF >= kS+index-1 {
+			m := 1
+			for i := 1; i < kS; i++ {
+				if sF[i] == sS[index+i] {
+					m++
 				}
 			}
-			if match == Count(s2) {
+			if m == kS {
 				return index
 			}
 		}
