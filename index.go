@@ -20,7 +20,7 @@ func Index(s string, toFind string) int {
 	}
 	for index := range sS {
 		index = index
-		kF++
+		kS++
 	}
 	for index, letter := range sS {
 		if letter == sF[0] && kS >= kF+index-1 {
