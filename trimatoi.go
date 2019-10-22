@@ -1,6 +1,17 @@
 package piscine
 
-func MinusPos(s string) bool {
+func IntCheck(s string) bool {
+	ok := false
+	for _, c := range s {
+		if c >= '0' && c <= '9' {
+			ok = true
+			break
+		}
+	}
+	return ok
+}
+
+func MinusCheck(s string) bool {
 	minus := false
 	for _, c := range s {
 		if c >= '0' && c <= '9' {
@@ -13,23 +24,12 @@ func MinusPos(s string) bool {
 	return minus
 }
 
-func StrCheck(s string) bool {
-	check := false
-	for _, c := range s {
-		if c >= '0' && c <= '9' {
-			check = true
-			break
-		}
-	}
-	return check
-}
-
 func TrimAtoi(s string) int {
 	x := 0
-	k := 0
-	if StrCheck(s) {
+	if IntCheck(s) == true {
 		for _, c := range s {
 			if c >= '0' && c <= '9' {
+				k := 0
 				for i := '1'; i <= c; i++ {
 					k++
 				}
@@ -37,7 +37,7 @@ func TrimAtoi(s string) int {
 			}
 		}
 	}
-	if MinusPos(s) {
+	if MinusCheck(s) {
 		x *= -1
 	}
 	return x
