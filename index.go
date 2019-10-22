@@ -23,15 +23,17 @@ func Index(s string, toFind string) int {
 		kS++
 	}
 	for index, letter := range sS {
-		if letter == sF[0] && kS >= kF+index-1 {
-			m := 1
-			for i := 1; i < kF; i++ {
-				if sF[i] == sS[index+i] {
-					m++
+		if kF != 0 {
+			if letter == sF[0] && kS >= kF+index-1 {
+				m := 1
+				for i := 1; i < kF; i++ {
+					if sF[i] == sS[index+i] {
+						m++
+					}
 				}
-			}
-			if m == kF {
-				return index
+				if m == kF {
+					return index
+				}
 			}
 		}
 	}
