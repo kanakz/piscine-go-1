@@ -1,59 +1,102 @@
 package piscine
 
-func Len(str string) int {
-	k := 0
-	for range str {
-		k++
-	}
-	return k
-}
+// func Len(str string) int {
+// 	k := 0
+// 	for range str {
+// 		k++
+// 	}
+// 	return k
+// }
+
+// func SplitWhiteSpaces(str string) []string {
+// 	strs_el := ""
+// 	strs := []string{}
+// 	for index, letter := range str {
+// 		if index == Len(str)-1 && string(letter) != " " && string(letter) != "\t" && string(letter) != "\n" {
+// 			strs_el += string(letter)
+// 			strs = append(strs, strs_el)
+// 		} else if string(letter) != " " && string(letter) != "\t" && string(letter) != "\n" {
+// 			strs_el += string(letter)
+// 		} else {
+// 			if Len(strs_el) >= 1 {
+// 				strs = append(strs, strs_el)
+// 			}
+// 			strs_el = ""
+// 		}
+// 	}
+// 	return strs
+// }
 
 func SplitWhiteSpaces(str string) []string {
-	strs_el := ""
-	strs := []string{}
-	for index, letter := range str {
-		if index == Len(str)-1 && string(letter) != " " && string(letter) != "\t" && string(letter) != "\n" {
-			strs_el += string(letter)
-			strs = append(strs, strs_el)
-		} else if string(letter) != " " && string(letter) != "\t" && string(letter) != "\n" {
-			strs_el += string(letter)
-		} else {
-			if Len(strs_el) >= 1 {
-				strs = append(strs, strs_el)
-			}
-			strs_el = ""
+	k := 0
+	no_white_spaces := false
+	for index := range str {
+		if no_white_spaces && index != 0 && (str[index-1] == '\n' || str[index-1] == '\t' || str[index-1] == ' ') && str[index] != '\n' && str[i] != '\t' && str[i] != ' ' {
+			k++
+		}
+		if str[index] != '\n' && str[index] != '\t' && str[index] != ' ' {
+			no_white_spaces = true
 		}
 	}
-	return strs
+	k++
+
+	x := 0
+	ans := make([]string, k)
+	ok := true
+	for _, c := range str {
+		if c == '\n' || c == '\t' || c == ' ' {
+			if !ok {
+				x++
+			}
+			ok = true
+			continue
+		}
+		ans[x] = ans[x] + string(c)
+		ok = false
+	}
+	return ans
 }
 
 // func SplitWhiteSpaces(str string) []string {
-// 	ln := 0
-// 	ok2 := false
-// 	for c := range str {
-
-// 		if ok2 && c != 0 && (str[c-1] == '\n' || str[c-1] == '\t' || str[c-1] == ' ') && str[c] != '\n' && str[c] != '\t' && str[c] != ' ' {
-// 			ln++
-// 		}
-// 		if str[c] != '\n' && str[c] != '\t' && str[c] != ' ' {
-// 			ok2 = true
+// 	ss := ""
+// 	len := 0
+// 	prev := false
+// 	for _, s := range str {
+// 		if (s == ' ' || s == '\n' || s == '\t') && !prev {
+// 			prev = true
+// 			len++
+// 		} else {
+// 			prev = false
 // 		}
 // 	}
-// 	ln++
+// 	len++
 
-// 	x := 0
-// 	ans := make([]string, ln)
-// 	ok := true
-// 	for _, c := range str {
-// 		if c == '\n' || c == '\t' || c == ' ' {
-// 			if !ok {
-// 				x++
+// 	arr := make([]string, len)
+
+// 	count := 0
+// 	for _, s := range str {
+
+// 		if s == ' ' || s == '\n' || s == '\t' {
+// 			length := 0
+// 			for i := range ss {
+// 				length = i + 1
 // 			}
-// 			ok = true
+// 			if length == 0 {
+// 				continue
+// 			}
+// 			arr[count] = ss
+// 			count++
+// 			ss = ""
 // 			continue
 // 		}
-// 		ans[x] = ans[x] + string(c)
-// 		ok = false
+// 		ss += string(s)
 // 	}
-// 	return ans
+// 	length := 0
+// 	for i := range ss {
+// 		length = i + 1
+// 	}
+// 	if length != 0 {
+// 		arr[count] = ss
+// 	}
+// 	return arr
 // }
