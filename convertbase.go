@@ -30,7 +30,7 @@ func AtoiBase(s string, t string) int {
 
 func Len(d string) int {
 	inc := 0
-	for _, _ = range d {
+	for = range d {
 		inc++
 	}
 	return inc
